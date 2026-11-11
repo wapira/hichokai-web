@@ -1,0 +1,21 @@
+<h1>演奏会一覧</h1>
+<ul>
+{% for concert in concerts %}
+    <li>
+        {{ concert.name }}
+
+        {% if concert.date == "None" %}
+            {{ concert.year }}
+        {% endif %}
+
+        {% if concert.date %}
+            {{ concert.date|date:"Y年m月d日" }}
+        {% endif %}
+
+        {% if concert.place %}
+            {{ concert.place }}
+        {% endif %}
+    </li>
+
+{% endfor %}
+</ul>
