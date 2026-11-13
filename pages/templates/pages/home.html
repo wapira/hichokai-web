@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}トップ{% endblock %}
+
+{% block content %}
+    <h1>飛鳥会HPへようこそ！</h1>
+    <p>奈良女子大学箏曲部飛鳥会です。演奏会やミニコンサートに向けて日々お箏を練習しています！</p>
+    <p>🌸新入部員募集中🌸1回生も2回生も大歓迎です！</p>
+
+    {% if next_concert %}
+        {{ next_concert.name}}
+    {% else %}
+        <p>次の公演は準備中</p>
+    {% endif %}
+    
+{% endblock %}
