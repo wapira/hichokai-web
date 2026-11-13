@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+        {% block title %}飛鳥会{% endblock %}
+    </title>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li>トップ</li> 
+                <li>飛鳥会とは</li>
+                <li><a href="{% url 'concerts:list' %}">演奏会一覧</a></li>
+                <li>新歓・FAQ</li>
+                <li>お問い合わせ</li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        {% block content %}
+            <p>This is template test</p>
+        {% endblock %}
+    </main>
+    <footer>©奈良女子大学 箏曲部飛鳥会</footer>
+</body>
+</html>

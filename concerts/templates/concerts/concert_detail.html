@@ -1,3 +1,6 @@
+{% extends "base.html" %}
+{% block title %}{{ concert.name }}{% endblock %}
+{% block content %}
 <h1>{{ concert.name }}</h1>
 <p>
         {% if concert.date %}
@@ -22,3 +25,4 @@
         <li>曲のデータがありません</li>     
     {% endfor %}
 </ul>    
+{% endblock %}

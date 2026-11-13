@@ -1,15 +1,16 @@
+{% extends "base.html" %}
+{% block title %}演奏会一覧{% endblock %}
+{% block content %}
 <h1>演奏会一覧</h1>
 <ul>
 {% for concert in concerts %}
     <li>
-        {{ concert.name }}
-
-        {% if concert.date == "None" %}
-            {{ concert.year }}
-        {% endif %}
+        <a href="{% url 'concerts:detail' concert.pk %}">{{ concert.name }}</a>/
 
         {% if concert.date %}
-            {{ concert.date|date:"Y年m月d日" }}
+            {{ concert.date|date:"Y年n月j日" }}
+        {% else %}
+            {{ concert.year }}
         {% endif %}
 
         {% if concert.place %}
@@ -19,3 +20,4 @@
 
 {% endfor %}
 </ul>
+{% endblock %}
